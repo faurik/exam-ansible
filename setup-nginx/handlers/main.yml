@@ -1,6 +1,0 @@
----
-# handlers file for setup-nginx
-- name: Restart nginx
-  systemd:
-    name: nginx
-    state: restarted
