@@ -4,7 +4,7 @@
   tasks:
     - name: Run nginx
       include_role: 
-        name: setup-nginx
+        name: faurik.ansible_nginx_balancer
 
 - hosts: apps
   remote_user: faurik
@@ -12,6 +12,6 @@
   tasks:
     - name: Run app instances
       include_role: 
-        name: setup-app
+        name: faurik.ansible_install_exam_app
       vars:
         container_name: app
