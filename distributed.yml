@@ -1,0 +1,17 @@
+- hosts: balancer
+  remote_user: faurik
+  become: yes
+  tasks:
+    - name: Run nginx
+      include_role: 
+        name: setup-nginx
+
+- hosts: apps
+  remote_user: faurik
+  become: yes
+  tasks:
+    - name: Run app instances
+      include_role: 
+        name: setup-app
+      vars:
+        container_name: app
